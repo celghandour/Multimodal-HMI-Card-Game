@@ -22,6 +22,7 @@ var io = socket.listen(server);
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
+    
 });
 //io.set("log level", 1);
 

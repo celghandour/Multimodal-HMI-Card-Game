@@ -1,22 +1,65 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <title>Tablet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="bower_components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" media="screen">
+    <style type="text/css">
 
-<html lang="fr">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	       <meta charset="utf-8">
-	   <title>Tablet</title>
-	
-		
-	<link rel="stylesheet" href="./css/style.css">
-        
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/bootstrap/docs/assets/js/bootstrap.js"></script>
-        <script src="client.js"></script>
-	</head>
-<body>
-	    <div id="tapis" style="cursor: pointer; transform: rotate();"> 
-		<div id="haut" class="tapis-vertical">
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+          
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -150px;
+      }
+
+      #table {
+        margin-top: 5px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #footer {
+        height: 50px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+        overflow:scroll;
+      }
+      #footer #log:before {
+        font-size: 36px;
+        font-weight: bold;
+        /*content: "Logging";*/
+        float: left;
+        margin-left: -230px;
+        margin-top: 65px;
+        position: fixed;
+
+      }
+      </style>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="bower_components/jquery/jquery.js"></script>
+      <script src="bower_components/bootstrap/docs/assets/js/bootstrap.js"></script>
+      <script src="tablet.js"></script>
+  </head>
+  <body>
+  <!-- Part 1: Wrap all page content here -->
+    <div id="tapis" style="cursor: pointer; transform: rotate();">
+    <div id="wrap">
+        <div id="haut" class="tapis-vertical">
 		    <div class="jeu-joueur vertical">
                 <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
                 <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
@@ -53,17 +96,25 @@
                 <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
             </div>
 		<p class="pseudo bleu">marouan </p></div>
-		<div id="centre" class="tapis-vertical">
-		    <div class="jeu-tapis"><img class="carte" src="image/jeu_de_carte/png/As_de_Pique.png" style="position: relative; bottom: 0px; width: 100px;"></div>
+      
+        <div id="centre" class="tapis-vertical">
+		   
 		</div>
 		<div id="message"><p>Time</p></div>
 
 		<div id="pastille" style="background-color: white;">
 		</div>
+        
+    </div>
 
-	    </div>
-	
-<script>
+    <div id="footer">
+      <div class="container" id="log">
+        <ul id="updates" class="unstyled">
+        </ul>
+      </div>
+    </div>
+    </div>
+      <script>
     
 var kcRotateDial=function(elem){
 	var output={};
@@ -226,5 +277,6 @@ var elem=document.getElementById("tapis");
 var dial=kcRotateDial(elem);
 </script>
 
-</body>
+      
+  </body>
 </html>
