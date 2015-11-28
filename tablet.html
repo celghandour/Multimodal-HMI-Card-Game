@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 
-<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta charset="utf-8">
-	<title>JsBelote</title>
-	<script src="./JsBelote_files/jquery-1.11.2.js"></script>
-	<script src="./JsBelote_files/Paquet.js"></script>
-	<script src="./JsBelote_files/Joueur.js"></script>
-	<script src="./JsBelote_files/cycle.js"></script>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	       <meta charset="utf-8">
+	   <title>Tablet</title>
 	
-	</script>
+		
 	<link rel="stylesheet" href="./css/style.css">
-	</head><body>
-	    <div id="tapis" style="cursor: pointer; transform: rotate();">
+        
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/bootstrap/docs/assets/js/bootstrap.js"></script>
+        <script src="client.js"></script>
+	</head>
+<body>
+	    <div id="tapis" style="cursor: pointer; transform: rotate();"> 
 		<div id="haut" class="tapis-vertical">
-		    <div class="jeu-joueur vertical"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"></div>
+		    <div class="jeu-joueur vertical">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+            </div>
 		<p class="pseudo gris">samir (Score )</p></div>
 		<div id="droite">
-		    <div class="jeu-joueur horizontal"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"></div>
+		    <div class="jeu-joueur horizontal">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+            </div>
 		<p class="pseudo bleu">chafikao (Score )</p></div>
 		<div id="gauche">
-		    <div class="jeu-joueur horizontal"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte rotate" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"></div>
-		<p class="pseudo bleu-fonce">Roland(Score )</p></div>
-			<div id="bas" class="tapis-vertical">
-		    <div class="jeu-joueur vertical"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"><img class="carte" src="./JsBelote_files/dos_de_carte.png" alt="dos de carte"></div>
-		
-
-		
+		   <div class="jeu-joueur horizontal">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte rotate" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+            </div>
+		          <p class="pseudo bleu-fonce">Roland(Score )</p></div>
+            <div id="bas" class="tapis-vertical">
+		    <div class="jeu-joueur vertical">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+                <img class="carte" src="image/jeu_de_carte/png/dos_de_carte.png" alt="dos de carte">
+            </div>
 		<p class="pseudo bleu">marouan </p></div>
 		<div id="centre" class="tapis-vertical">
-		    <div class="jeu-tapis"><img class="carte" src="./JsBelote_files/As_de_Pique.png" style="position: relative; bottom: 0px; width: 100px;"></div>
+		    <div class="jeu-tapis"><img class="carte" src="image/jeu_de_carte/png/As_de_Pique.png" style="position: relative; bottom: 0px; width: 100px;"></div>
 		</div>
 		<div id="message"><p>Time</p></div>
 
@@ -38,6 +64,7 @@
 	    </div>
 	
 <script>
+    
 var kcRotateDial=function(elem){
 	var output={};
 	//Preventing elem to being selected on IE
@@ -198,4 +225,6 @@ var kcRotateDial=function(elem){
 var elem=document.getElementById("tapis");
 var dial=kcRotateDial(elem);
 </script>
-</body></html>
+
+</body>
+</html>

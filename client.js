@@ -1,7 +1,7 @@
 var socket = io.connect("http://localhost:8080");
 
 //var socket = io.connect("http://ec2-54-229-63-210.eu-west-1.compute.amazonaws.com:8080");
-socket.on("logging", function(data) {
+socket.on("logging", function (data) {
   $("#updates").append("<li>"+ data.message + "</li>");
   var log = document.getElementById('footer');
   log.scrollTop = log.scrollHeight;
@@ -78,11 +78,12 @@ socket.on("updatePackCount", function(data) {
 socket.on("updateCardsOnTable", function(data){
   console.log(data);
   $("#playArea").show();
-  $("#table").text("");
+  $("#centre").text("");
   if (data.lastCardOnTable == "") {
-    $("#table").text("");
+    $("#centre").text("");
   } else {
-    $("#table").append("<img width=100 src=resources/" + data.lastCardOnTable + ".png>");
+      $("#centre").append('<div class="jeu-tapis"><img class="carte" src="resources/' + data.lastCardOnTable + '.png" style="position: relative; bottom: 0px; width: 100px;"></div>' );
+   // chafik  $("#table").append("<img class="carte" src=resources/" + data.lastCardOnTable + ".png>"); 
   }
 });
 
